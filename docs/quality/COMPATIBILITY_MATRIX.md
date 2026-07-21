@@ -9,5 +9,6 @@
 | Adapter Interface | 0.9.1 | Pacote aprovado + Profile | Export 0.7 | Compatível |
 | Shopee BR Adapter | 0.9.1 | Interface + Profile Shopee | Export 0.7 | Perfil produtivo pendente |
 | Orchestrator | 0.8.0 | Requests + Registry | Run 0.8 | Compatível |
+| Plugin Loader | 0.9.2 | Manifest 0.9.2 | Adapter Registry | Candidato a estável |
 
 Node 20, 22 e 24 são suportados em CI. Consumidores devem validar `schema_version` e rejeitar major desconhecida. A matriz é atualizada em toda mudança de contrato ou suporte.

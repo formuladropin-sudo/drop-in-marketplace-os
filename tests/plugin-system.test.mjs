@@ -1,0 +1,13 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import Ajv2020 from "ajv/dist/2020.js";
+import { loadAdapterPlugins } from "../src/plugins/index.mjs";
+import { validatePipelineInput } from "../src/interfaces/input-validator.mjs";
+const j=async p=>JSON.parse(await readFile(new URL(p,import.meta.url),"utf8"));
+const manifest=await j("../config/plugins/adapters.json"),schema=await j("../schemas/v0.9.2/adapter-plugin-manifest.schema.json");
+test("plugin manifest conforms to public schema",()=>{const v=new Ajv2020({strict:true}).compile(schema);assert.equal(v(manifest),true,JSON.stringify(v.errors));});
+test("loader discovers enabled Shopee adapter",async()=>{const registry=await loadAdapterPlugins(manifest);assert.equal(registry.resolve("shopee","BR").id,"shopee-br");});
+test("loader rejects path traversal",async()=>{const x=structuredClone(manifest);x.plugins[0].module="./../secret.mjs";await assert.rejects(()=>loadAdapterPlugins(x),/PLUGIN_SPECIFIER_FORBIDDEN/);});
+test("loader rejects missing export",async()=>{const x=structuredClone(manifest);x.plugins[0].export="missing";await assert.rejects(()=>loadAdapterPlugins(x),/PLUGIN_EXPORT_NOT_FOUND/);});
+test("pipeline input validator returns structured field errors",async()=>{const input={ad:await j("./fixtures/contracts/valid/shopee-shirt.json"),decision_request:await j("./fixtures/decision/request-conversion.json"),copy_request:await j("./fixtures/copy/request-shopee.json"),carousel_request:await j("./fixtures/carousel/request-marketplace.json"),marketplace_profile:await j("../config/marketplaces/shopee-br.example.json")};assert.equal(validatePipelineInput(input).valid,true);delete input.ad;const result=validatePipelineInput(input);assert.equal(result.valid,false);assert.equal(result.errors[0].field,"ad");});

@@ -2,27 +2,28 @@
 
 ## Versão atual
 
-`0.9.1`
+`0.9.2`
 
 | Campo | Valor |
 |---|---|
-| Estágio | Architecture Audit |
-| Estabilidade | Arquitetura aprovada para Marketplace Core 1.0 |
-| Adapter interface | `0.9.1` |
-| Export contract | `marketplace_export@0.7.0` |
+| Estágio | Plugin & Compatibility Hardening |
+| Estabilidade | Candidato final ao congelamento 1.0 |
+| Plugin manifest | `adapter_plugin_manifest@0.9.2` |
+| Adapter registry | `0.9.1` compatível |
 | CI | Node 20, 22 e 24 |
 | Data | 2026-07-21 |
-| Referência | Commit 0.9.1 — Architecture Audit |
+| Referência | Commit 0.9.2 — Plugin & Compatibility Hardening |
 
-## Parecer
+## Capacidades concluídas
 
-Dependências, responsabilidades, nomenclatura, documentação, contratos e extensibilidade foram auditados. O núcleo não depende mais de um marketplace concreto; novos canais entram por registry e interface pública.
+- Plugin Loader e Adapter Discovery;
+- Dependency Validator;
+- Contract Compatibility Checker;
+- CLI Validation;
+- ADRs e estabilidade pública documentada.
 
 ## Estado da versão 1.0
 
-A arquitetura está aprovada para o marco Marketplace Core. A publicação estável continua condicionada a:
+A API candidata está completa para congelamento. A publicação estável mantém os gates externos já definidos: política oficial do canal e piloto controlado sem blocker crítico.
 
-1. perfil oficial vigente da Shopee Brasil verificado e aprovado;
-2. piloto controlado com produto real concluído sem blocker crítico.
-
-Consulte [`docs/quality/ARCHITECTURE_AUDIT_0.9.1.md`](docs/quality/ARCHITECTURE_AUDIT_0.9.1.md).
+Consulte [`COMPATIBILITY.md`](COMPATIBILITY.md) e [`docs/quality/QUALITY_GATE.md`](docs/quality/QUALITY_GATE.md).

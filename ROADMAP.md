@@ -129,6 +129,14 @@ Resultado entregue em `0.9.0`: CI multi-Node, auditoria, política de segurança
 
 A versão `1.0.0` exige contratos públicos estáveis, pelo menos um marketplace suportado de ponta a ponta, políticas de compatibilidade testadas, documentação de operação e evidência de uso real sem bloqueios críticos.
 
+## Hardening 0.9.2 — Concluído
+
+- plugin loader e adapter discovery por manifesto;
+- dependency validator;
+- contract compatibility checker;
+- CLI validation;
+- ADRs e política pública de compatibilidade.
+
 ## Fora do escopo atual
 
 - publicação automática sem aprovação configurável;

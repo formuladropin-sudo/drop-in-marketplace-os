@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Architecture Audit · **Versão:** `0.9.1` · **Estabilidade:** arquitetura aprovada; release estável condicionada a validações externas
+> **Status:** Plugin & Compatibility Hardening · **Versão:** `0.9.2` · **Estabilidade:** candidato final à API pública 1.0
 
 ## Visão
 
@@ -63,6 +63,8 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Release checklist](docs/operations/RELEASE_CHECKLIST.md) | Critérios internos e externos para release. |
 | [Quality Gate](docs/quality/QUALITY_GATE.md) | Gates binários de commit, arquitetura e release. |
 | [Architecture Audit 0.9.1](docs/quality/ARCHITECTURE_AUDIT_0.9.1.md) | Achados, correções e parecer arquitetural. |
+| [Compatibilidade pública](COMPATIBILITY.md) | API pública, breaking changes e depreciação. |
+| [ADRs](docs/adr/README.md) | Decisões arquiteturais, alternativas e consequências. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -107,7 +109,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.9.1` aprova a arquitetura após remover o acoplamento direto à Shopee, formalizar a interface de plugins/adapters, completar os contratos e instituir governança de qualidade. A `1.0.0` permanece condicionada à política oficial e ao piloto operacional.
+A versão `0.9.2` adiciona carregamento declarativo de plugins, validação da CLI, verificação de dependências e compatibilidade contratual. É o candidato final para congelamento da API Marketplace Core 1.0.
 
 ## Licença
 

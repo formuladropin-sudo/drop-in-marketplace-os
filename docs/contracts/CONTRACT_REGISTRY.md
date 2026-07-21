@@ -12,5 +12,6 @@
 | Analysis Report | 0.6.0 | `schemas/v0.6.0/analysis-report.schema.json` | Analyzer | Adapters, Review | `docs/engines/analyzer/README.md` |
 | Marketplace Export | 0.7.0 | `schemas/v0.7.0/marketplace-export.schema.json` | Adapter | Export/Review | `docs/adapters/shopee-br/README.md` |
 | Pipeline Run | 0.8.0 | `schemas/v0.8.0/pipeline-run.schema.json` | Orchestrator | CLI/Persistence | `docs/application/ORCHESTRATION.md` |
+| Adapter Plugin Manifest | 0.9.2 | `schemas/v0.9.2/adapter-plugin-manifest.schema.json` | Application composition | Plugin Loader | `docs/adr/0004-plugin-system.md` |
 
 Todo schema público deve aparecer nesta tabela no mesmo commit em que for criado. Alterações seguem `docs/project/VERSIONING.md`.

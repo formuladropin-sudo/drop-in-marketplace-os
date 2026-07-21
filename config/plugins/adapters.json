@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.9.2",
+  "contract_type": "adapter_plugin_manifest",
+  "plugins": [
+    { "id": "shopee-br", "module": "./src/adapters/shopee-br/index.mjs", "export": "shopeeBrAdapter", "enabled": true }
+  ]
+}

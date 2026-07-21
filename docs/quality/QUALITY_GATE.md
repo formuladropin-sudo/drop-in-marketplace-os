@@ -14,6 +14,8 @@ Definir critérios binários para aprovar mudanças e releases. Score alto não 
 6. zero vulnerabilidade alta ou crítica;
 7. versão e changelog coerentes.
 
+Comando oficial: `npm run check`, que inclui testes, dependências arquiteturais, compatibilidade contratual, documentos de release e auditoria de segurança.
+
 ## Gate arquitetural
 
 - engines não importam outras engines, adapters, aplicação ou interfaces;

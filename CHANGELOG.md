@@ -13,6 +13,23 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - resolver achados do piloto;
 - estabilizar contratos e publicar `1.0.0`.
 
+## [0.9.2] - 2026-07-21
+
+### Adicionado
+
+- plugin loader declarativo e manifesto `0.9.2`;
+- descoberta controlada de adapters com proteção contra path traversal;
+- validação de entrada pela CLI;
+- validadores executáveis de dependências e contratos;
+- ADRs de registry, contratos, schemas e plugins;
+- `COMPATIBILITY.md` com API pública, SemVer, breaking changes e depreciação;
+- cinco testes do sistema de plugins e validação.
+
+### Alterado
+
+- quality gate ampliado para arquitetura e compatibilidade;
+- versão elevada para `0.9.2`.
+
 ## [0.9.1] - 2026-07-21
 
 ### Adicionado
@@ -181,7 +198,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.1...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.2...HEAD
+[0.9.2]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.1...v0.9.2
 [0.9.1]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.7.0...v0.8.0
