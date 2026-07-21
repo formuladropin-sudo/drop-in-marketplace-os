@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Canonical Contracts · **Versão:** `0.2.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Decision Engine · **Versão:** `0.3.0` · **Estabilidade:** desenvolvimento inicial
 
 ## Visão
 
@@ -53,6 +53,7 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Contratos canônicos](docs/contracts/README.md) | Modelo de dados, validação e evolução dos contratos. |
 | [Modelo canônico](docs/contracts/CANONICAL_MODEL.md) | Semântica de produto, oferta, evidências e claims. |
 | [Taxonomia de erros](docs/contracts/ERROR_TAXONOMY.md) | Estados, severidades e códigos estáveis. |
+| [Decision Engine](docs/engines/decision/README.md) | Algoritmo, contratos, scoring e limites da primeira engine. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -97,7 +98,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.2.0` conclui **Canonical Contracts**: produto, oferta, evidências, claims, assets e metadados possuem contrato versionado e validação estrutural/semântica. O próximo marco previsto é a **Decision Engine**, que deverá consumir esse contrato sem alterar fatos.
+A versão `0.3.0` entrega a **Decision Engine** determinística e explicável. Ela consome o contrato canônico, ordena claims suportadas, produz proposta de valor, hierarquia, objeções, riscos e confiança. O próximo marco é a **Copy Engine**, que converterá essa estratégia em texto sem modificar fatos ou decisões.
 
 ## Licença
 

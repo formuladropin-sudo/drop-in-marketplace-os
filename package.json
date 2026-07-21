@@ -1,11 +1,11 @@
 {
   "name": "drop-in-marketplace-os",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Framework modular para geração e análise de anúncios de marketplaces.",
   "type": "module",
   "scripts": {
-    "test": "npm run validate:contracts",
+    "test": "npm run validate:contracts && node --test tests/*.test.mjs",
     "validate:contracts": "node tools/validate-contracts.mjs"
   },
   "engines": {

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.3.0/decision-request.schema.json",
+  "title": "Decision Engine Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "request_id", "primary_objective", "audience", "priorities", "constraints"],
+  "properties": {
+    "schema_version": { "const": "0.3.0" },
+    "contract_type": { "const": "decision_request" },
+    "request_id": { "$ref": "#/$defs/id" },
+    "primary_objective": { "enum": ["conversion", "discovery", "validation"] },
+    "audience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "awareness_level"],
+      "properties": {
+        "description": { "type": "string", "minLength": 1, "maxLength": 1024 },
+        "awareness_level": { "enum": ["unaware", "problem_aware", "solution_aware", "product_aware", "most_aware", "unknown"] }
+      }
+    },
+    "priorities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "business_weight"],
+        "properties": {
+          "claim_id": { "$ref": "#/$defs/id" },
+          "business_weight": { "type": "integer", "minimum": 0, "maximum": 5 },
+          "reason": { "type": "string", "maxLength": 1024 }
+        }
+      },
+      "uniqueItems": true
+    },
+    "known_objections": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text", "response_claim_ids"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "text": { "type": "string", "minLength": 1, "maxLength": 1024 },
+          "response_claim_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_messages", "minimum_confidence"],
+      "properties": {
+        "max_messages": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "minimum_confidence": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$" }
+  }
+}

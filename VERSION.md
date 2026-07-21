@@ -2,32 +2,34 @@
 
 ## Versão atual
 
-`0.2.0`
+`0.3.0`
 
 | Campo | Valor |
 |---|---|
-| Estágio | Canonical Contracts |
+| Estágio | Decision Engine |
 | Estabilidade | Desenvolvimento inicial |
-| Contrato canônico | `marketplace_ad@0.2.0` |
+| Entrada canônica | `marketplace_ad@0.2.0` |
+| Contratos da engine | `decision_request@0.3.0`, `decision_strategy@0.3.0` |
+| Algoritmo | `decision-ranking@0.3.0` |
 | Data | 2026-07-21 |
-| Referência | Commit 0002 — Canonical Contracts |
+| Referência | Commit 0003 — Decision Engine |
 
 ## Significado
 
-- `0`: o sistema ainda está antes da API estável;
-- `2`: segunda capacidade compatível — contratos canônicos verificáveis;
+- `0`: o sistema permanece antes da API estável;
+- `3`: terceira capacidade compatível — decisão estratégica verificável;
 - `0`: primeira release desta capacidade.
 
 ## Compatibilidade
 
-Documentos `marketplace_ad@0.2.0` são validados pelo schema em `schemas/v0.2.0`. Mudança incompatível no significado ou nos campos obrigatórios exige nova versão e estratégia de migração. Nenhuma engine pode alterar silenciosamente este envelope.
+A Decision Engine `0.3.0` consome `marketplace_ad@0.2.0` e `decision_request@0.3.0`. Ela produz `decision_strategy@0.3.0`. Pesos e fórmula pertencem ao algoritmo versionado; mudanças que alterem ranking exigem regressão, changelog e avaliação de compatibilidade.
 
 ## Regras operacionais
 
-1. Nenhum commit altera comportamento ou contrato sem avaliar impacto na versão.
-2. Toda release atualiza este arquivo e o changelog no mesmo commit.
-3. Tags usam o formato `vMAJOR.MINOR.PATCH`.
-4. Execuções registram `schema_version` e `system_version`.
-5. Builds intermediários podem usar sufixos SemVer sem substituir release existente.
+1. Nenhuma engine altera fatos do contrato canônico.
+2. Toda saída registra versões da entrada, contrato e algoritmo.
+3. Toda release atualiza versão, changelog, documentação e testes.
+4. Tags usam `vMAJOR.MINOR.PATCH`.
+5. Mudança incompatível requer migração documentada.
 
 Consulte [`docs/project/VERSIONING.md`](docs/project/VERSIONING.md) para as regras completas.

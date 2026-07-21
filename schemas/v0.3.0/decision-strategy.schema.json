@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.3.0/decision-strategy.schema.json",
+  "title": "Decision Engine Strategy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "strategy_id", "source", "status", "primary_objective", "audience", "message_hierarchy", "objections", "risks", "confidence", "decision_trace"],
+  "properties": {
+    "schema_version": { "const": "0.3.0" },
+    "contract_type": { "const": "decision_strategy" },
+    "strategy_id": { "$ref": "#/$defs/id" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_id", "run_id", "input_schema_version", "request_id"],
+      "properties": {
+        "project_id": { "$ref": "#/$defs/id" },
+        "run_id": { "$ref": "#/$defs/id" },
+        "input_schema_version": { "const": "0.2.0" },
+        "request_id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "status": { "enum": ["ready", "needs_review", "blocked"] },
+    "primary_objective": { "enum": ["conversion", "discovery", "validation"] },
+    "audience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "awareness_level"],
+      "properties": {
+        "description": { "type": "string", "minLength": 1, "maxLength": 1024 },
+        "awareness_level": { "enum": ["unaware", "problem_aware", "solution_aware", "product_aware", "most_aware", "unknown"] }
+      }
+    },
+    "value_proposition": { "$ref": "#/$defs/message" },
+    "message_hierarchy": { "type": "array", "items": { "$ref": "#/$defs/message" } },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text", "response_messages", "status"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "text": { "type": "string" },
+          "response_messages": { "type": "array", "items": { "$ref": "#/$defs/message" } },
+          "status": { "enum": ["covered", "uncovered"] }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message"],
+        "properties": {
+          "code": { "$ref": "#/$defs/id" },
+          "severity": { "enum": ["blocker", "warning", "info"] },
+          "message": { "type": "string", "minLength": 1 },
+          "reference_id": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "confidence": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "decision_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm_version", "candidates_considered", "candidates_rejected", "scoring_formula"],
+      "properties": {
+        "algorithm_version": { "const": "decision-ranking@0.3.0" },
+        "candidates_considered": { "type": "integer", "minimum": 0 },
+        "candidates_rejected": { "type": "integer", "minimum": 0 },
+        "scoring_formula": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$" },
+    "message": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rank", "claim_id", "text", "evidence_ids", "evidence_score", "business_weight", "score", "reason"],
+      "properties": {
+        "rank": { "type": "integer", "minimum": 1 },
+        "claim_id": { "$ref": "#/$defs/id" },
+        "text": { "type": "string", "minLength": 1 },
+        "evidence_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "evidence_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "business_weight": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

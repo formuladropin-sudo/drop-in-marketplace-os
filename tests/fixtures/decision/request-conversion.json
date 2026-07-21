@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.3.0",
+  "contract_type": "decision_request",
+  "request_id": "decision-shirt-001",
+  "primary_objective": "conversion",
+  "audience": {
+    "description": "Pessoas adultas que desejam expressar devoção por meio da vestimenta.",
+    "awareness_level": "product_aware"
+  },
+  "priorities": [
+    { "claim_id": "claim-material", "business_weight": 4, "reason": "Diferencial de conforto informado no briefing." },
+    { "claim_id": "claim-dispatch", "business_weight": 5, "reason": "Reduz incerteza operacional antes da compra." }
+  ],
+  "known_objections": [
+    { "id": "obj-dispatch", "text": "Quando o pedido será postado?", "response_claim_ids": ["claim-dispatch"] }
+  ],
+  "constraints": { "max_messages": 2, "minimum_confidence": 70 }
+}

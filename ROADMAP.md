@@ -45,7 +45,7 @@ Critério de saída: dados inválidos são rejeitados de forma determinística e
 
 Resultado entregue em `0.2.0`: schema canônico, documentação semântica, taxonomia de erros, ADR, fixtures e validação automatizada em duas camadas.
 
-## Fase 2 — Decision Engine (`0.3.x`)
+## Fase 2 — Decision Engine (`0.3.x`) — Concluída
 
 **Objetivo:** converter dados validados em estratégia explícita.
 
@@ -56,6 +56,8 @@ Entregas:
 - matriz de objeções, evidência e risco;
 - explicação das alternativas descartadas;
 - testes de consistência decisória.
+
+Resultado entregue em `0.3.0`: contratos de pedido e estratégia, ranking determinístico por evidência/prioridade, tratamento de objeções, riscos explícitos, decision trace e cinco testes automatizados.
 
 ## Fase 3 — Copy Engine (`0.4.x`)
 

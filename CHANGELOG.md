@@ -8,10 +8,30 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- contrato de saída da Decision Engine;
-- proposta de valor e hierarquia de mensagens;
-- matriz de objeções, evidência e risco;
-- testes de consistência decisória.
+- contratos de entrada e saída da Copy Engine;
+- geração controlada de título, descrição, bullets e CTAs;
+- políticas de alegações e termos proibidos;
+- testes de fidelidade entre estratégia e copy.
+
+## [0.3.0] - 2026-07-21
+
+### Adicionado
+
+- Decision Engine determinística e independente de geração livre;
+- contratos `decision_request@0.3.0` e `decision_strategy@0.3.0`;
+- algoritmo versionado `decision-ranking@0.3.0`;
+- ranking por força da evidência e prioridade comercial explícita;
+- proposta de valor, hierarquia de mensagens, objeções, riscos e confiança;
+- decision trace com fórmula e quantidade de candidatos;
+- bloqueios para claims proibidas e referências desconhecidas;
+- documentação completa de responsabilidade, uso e limites;
+- cinco testes automatizados de contrato, determinismo e segurança.
+
+### Alterado
+
+- versão do sistema elevada para `0.3.0`;
+- suíte `npm test` ampliada para contratos e testes da Decision Engine;
+- README e roadmap sincronizados com a primeira engine funcional.
 
 ## [0.2.0] - 2026-07-21
 
@@ -44,6 +64,7 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.2.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/releases/tag/v0.1.0
