@@ -1,0 +1,7 @@
+{
+  "version": "example-2026-07-21-unverified",
+  "channel": "shopee",
+  "country": "BR",
+  "limits": { "title_max_chars": 120, "description_max_chars": 5000, "image_max_count": 9 },
+  "notice": "Example profile for tests. Verify current Shopee rules before production use."
+}

@@ -101,11 +101,13 @@ Entregas:
 
 Resultado entregue em `0.6.0`: rubric de 100 pontos, sete dimensões, blockers, achados explicáveis, próximas ações e cinco testes automatizados.
 
-## Fase 6 — Marketplace Adapters (`0.7.x`)
+## Fase 6 — Marketplace Adapters (`0.7.x`) — Concluída para o canal inicial
 
 **Objetivo:** adaptar o pacote canônico a canais específicos.
 
 Ordem inicial proposta: Shopee Brasil, Mercado Livre Brasil e TikTok Shop Brasil. A ordem poderá mudar mediante ADR e evidência operacional.
+
+Resultado entregue em `0.7.0`: adapter Shopee Brasil, perfil de política externo/versionado, mapeamento de variantes e cinco testes. Outros canais permanecem extensões futuras após validação do canal inicial.
 
 ## Fase 7 — Orchestration & Interfaces (`0.8.x`)
 

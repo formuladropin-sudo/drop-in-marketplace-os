@@ -1,0 +1,1 @@
+export { adaptShopeeBr } from "./shopee-adapter.mjs";

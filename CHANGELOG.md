@@ -8,10 +8,25 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- adapter Shopee Brasil;
-- limites e mapeamento do canal;
-- exportação validada do pacote;
-- testes específicos de política e campos.
+- orquestrador end-to-end;
+- interface CLI;
+- persistência de artefatos por execução;
+- recuperação e observabilidade de falhas.
+
+## [0.7.0] - 2026-07-21
+
+### Adicionado
+
+- adapter Shopee Brasil com perfil de política versionado;
+- mapeamento de produto, preço, atributos, variantes e slides;
+- avisos de truncagem e revisão;
+- perfil de exemplo explicitamente não aprovado para produção;
+- cinco testes automatizados.
+
+### Alterado
+
+- versão elevada para `0.7.0`;
+- README e roadmap sincronizados.
 
 ## [0.6.0] - 2026-07-21
 
@@ -114,7 +129,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.6.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...v0.4.0
