@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.2.0",
+  "contract_type": "marketplace_ad",
+  "project_id": "camiseta-sao-paulo-bege",
+  "marketplace": {
+    "channel": "shopee",
+    "country": "BR",
+    "locale": "pt-BR",
+    "currency": "BRL",
+    "category_id": "camisetas",
+    "policy_profile_version": "pending-verification"
+  },
+  "product": {
+    "name": "Camiseta São Paulo",
+    "brand": "MTS Impressões",
+    "category": "Camiseta religiosa",
+    "attributes": {
+      "material": "Dry Fit",
+      "color": "Bege",
+      "gender": "Unissex",
+      "sizes": ["P", "M", "G", "GG"]
+    },
+    "variants": [
+      {
+        "sku": "SP-BEGE-P",
+        "attributes": { "color": "Bege", "size": "P" },
+        "availability": "in_stock",
+        "stock_quantity": 50
+      },
+      {
+        "sku": "SP-BEGE-M",
+        "attributes": { "color": "Bege", "size": "M" },
+        "availability": "in_stock",
+        "stock_quantity": 50
+      }
+    ]
+  },
+  "offer": {
+    "price": { "amount": 69.9, "currency": "BRL" },
+    "compare_at_price": { "amount": 79.9, "currency": "BRL" },
+    "shipping": {
+      "dispatch_time_hours": 24,
+      "scope": "seller_dispatch",
+      "notes": "Prazo informado pelo responsável da operação."
+    },
+    "warranty": { "type": "legal", "terms_source": "Legislação aplicável no Brasil." }
+  },
+  "evidence": [
+    {
+      "id": "ev-material",
+      "type": "provided",
+      "subject": "product.attributes.material",
+      "value": "Dry Fit",
+      "source": "Briefing do responsável pelo produto",
+      "confidence": 90
+    },
+    {
+      "id": "ev-dispatch",
+      "type": "provided",
+      "subject": "offer.shipping.dispatch_time_hours",
+      "value": 24,
+      "source": "Política operacional informada",
+      "confidence": 90
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-material",
+      "text": "Confeccionada em tecido Dry Fit.",
+      "status": "supported",
+      "evidence_ids": ["ev-material"]
+    },
+    {
+      "id": "claim-dispatch",
+      "text": "Postagem em até 24 horas.",
+      "status": "supported",
+      "evidence_ids": ["ev-dispatch"],
+      "notes": "Não converter em promessa de entrega em 24 horas."
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-front",
+      "type": "product_image",
+      "uri": "library://products/camiseta-sao-paulo/front.png",
+      "usage_rights": "owned",
+      "variant_skus": ["SP-BEGE-P", "SP-BEGE-M"]
+    }
+  ],
+  "metadata": {
+    "run_id": "run-contract-0001",
+    "created_at": "2026-07-21T15:00:00-03:00",
+    "created_by": "foundation-fixture",
+    "system_version": "0.2.0",
+    "source_revision": "commit-0002"
+  }
+}

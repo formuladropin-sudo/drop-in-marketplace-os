@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Foundation · **Versão:** `0.1.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Canonical Contracts · **Versão:** `0.2.0` · **Estabilidade:** desenvolvimento inicial
 
 ## Visão
 
@@ -50,6 +50,9 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Guia de desenvolvimento](docs/project/DEVELOPMENT_GUIDE.md) | Processo, commits, testes, review e DoD. |
 | [Regras para IA](docs/project/AI_RULES.md) | Segurança, autoridade e comportamento de agentes. |
 | [Versionamento](docs/project/VERSIONING.md) | SemVer, compatibilidade, depreciação e releases. |
+| [Contratos canônicos](docs/contracts/README.md) | Modelo de dados, validação e evolução dos contratos. |
+| [Modelo canônico](docs/contracts/CANONICAL_MODEL.md) | Semântica de produto, oferta, evidências e claims. |
+| [Taxonomia de erros](docs/contracts/ERROR_TAXONOMY.md) | Estados, severidades e códigos estáveis. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -83,9 +86,18 @@ Pastas de código, engines, adapters, schemas e testes serão criadas nos commit
 - dados sensíveis e credenciais nunca são versionados;
 - conclusão exige validação proporcional ao risco.
 
+## Validação dos contratos
+
+```bash
+npm ci
+npm test
+```
+
+O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirma que exemplos negativos falham pelo código esperado.
+
 ## Estado atual e próximo marco
 
-A versão `0.1.0` conclui a Foundation documental. O próximo marco previsto no roadmap é **Canonical Contracts**, responsável por definir o modelo de dados, schemas, exemplos e testes de contrato antes da criação das engines.
+A versão `0.2.0` conclui **Canonical Contracts**: produto, oferta, evidências, claims, assets e metadados possuem contrato versionado e validação estrutural/semântica. O próximo marco previsto é a **Decision Engine**, que deverá consumir esse contrato sem alterar fatos.
 
 ## Licença
 

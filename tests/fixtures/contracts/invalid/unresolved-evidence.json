@@ -1,0 +1,54 @@
+{
+  "expected_error": "SEMANTIC_REFERENCE_NOT_FOUND",
+  "document": {
+    "schema_version": "0.2.0",
+    "contract_type": "marketplace_ad",
+    "project_id": "unresolved-evidence",
+    "marketplace": {
+      "channel": "generic",
+      "country": "BR",
+      "locale": "pt-BR",
+      "currency": "BRL"
+    },
+    "product": {
+      "name": "Produto de teste",
+      "category": "Teste",
+      "attributes": { "color": "Azul" },
+      "variants": [
+        {
+          "sku": "TEST-002",
+          "attributes": { "color": "Azul" },
+          "availability": "unknown"
+        }
+      ]
+    },
+    "offer": {
+      "price": { "amount": 10, "currency": "BRL" },
+      "shipping": { "dispatch_time_hours": 48, "scope": "seller_dispatch" },
+      "warranty": { "type": "unknown" }
+    },
+    "evidence": [
+      {
+        "id": "ev-existing",
+        "type": "provided",
+        "subject": "product.attributes.color",
+        "value": "Azul",
+        "confidence": 80
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-invalid",
+        "text": "Uma alegação sem referência válida.",
+        "status": "supported",
+        "evidence_ids": ["ev-missing"]
+      }
+    ],
+    "metadata": {
+      "run_id": "run-invalid-2",
+      "created_at": "2026-07-21T15:00:00-03:00",
+      "created_by": "invalid-fixture",
+      "system_version": "0.2.0"
+    }
+  }
+}

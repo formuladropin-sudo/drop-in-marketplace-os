@@ -13,7 +13,7 @@ Este roadmap organiza a evolução do produto por capacidades verificáveis. Dat
 - manter revisão humana em decisões sensíveis;
 - medir qualidade antes de otimizar velocidade.
 
-## Fase 0 — Foundation (`0.1.x`)
+## Fase 0 — Foundation (`0.1.x`) — Concluída
 
 **Objetivo:** estabelecer linguagem, arquitetura, governança e versionamento.
 
@@ -28,7 +28,7 @@ Entregas:
 
 Critério de saída: outra pessoa deve compreender o produto, suas regras e como contribuir sem depender do histórico de conversas.
 
-## Fase 1 — Canonical Contracts (`0.2.x`)
+## Fase 1 — Canonical Contracts (`0.2.x`) — Concluída
 
 **Objetivo:** definir entradas, saídas e estados do pipeline.
 
@@ -42,6 +42,8 @@ Entregas:
 - taxonomia de erros, bloqueios e alertas.
 
 Critério de saída: dados inválidos são rejeitados de forma determinística e toda saída pode ser rastreada até sua origem.
+
+Resultado entregue em `0.2.0`: schema canônico, documentação semântica, taxonomia de erros, ADR, fixtures e validação automatizada em duas camadas.
 
 ## Fase 2 — Decision Engine (`0.3.x`)
 

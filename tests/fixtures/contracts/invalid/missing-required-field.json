@@ -1,0 +1,49 @@
+{
+  "expected_error": "CONTRACT_REQUIRED_FIELD_MISSING",
+  "document": {
+    "schema_version": "0.2.0",
+    "contract_type": "marketplace_ad",
+    "project_id": "missing-offer",
+    "marketplace": {
+      "channel": "generic",
+      "country": "BR",
+      "locale": "pt-BR",
+      "currency": "BRL"
+    },
+    "product": {
+      "name": "Produto incompleto",
+      "category": "Teste",
+      "attributes": { "color": "Preto" },
+      "variants": [
+        {
+          "sku": "TEST-001",
+          "attributes": { "color": "Preto" },
+          "availability": "unknown"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "ev-1",
+        "type": "provided",
+        "subject": "product.name",
+        "value": "Produto incompleto",
+        "confidence": 80
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-1",
+        "text": "Produto de teste.",
+        "status": "supported",
+        "evidence_ids": ["ev-1"]
+      }
+    ],
+    "metadata": {
+      "run_id": "run-invalid-1",
+      "created_at": "2026-07-21T15:00:00-03:00",
+      "created_by": "invalid-fixture",
+      "system_version": "0.2.0"
+    }
+  }
+}
