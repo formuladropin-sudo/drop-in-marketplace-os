@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.5.0",
+  "contract_type": "carousel_request",
+  "request_id": "carousel-shirt-001",
+  "slide_count": 8,
+  "aspect_ratio": "1:1",
+  "visual_style": "Clean premium marketplace layout, white and beige palette, high mobile readability.",
+  "preservation": { "preserve_color": true, "preserve_print": true, "preserve_proportions": true, "preserve_material": true },
+  "safe_zone_percent": 8,
+  "include_measurements": true
+}

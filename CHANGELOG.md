@@ -8,10 +8,27 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- contratos e narrativa da Carousel Engine;
-- especificações de assets e safe zones;
-- regras de preservação do produto;
-- testes de cobertura visual e rastreabilidade.
+- rubric e contrato da Analyzer Engine;
+- scores explicáveis por dimensão;
+- blockers, warnings e recomendações;
+- testes de consistência do pacote completo.
+
+## [0.5.0] - 2026-07-21
+
+### Adicionado
+
+- Carousel Engine para planos visuais auditáveis;
+- contratos `carousel_request@0.5.0` e `carousel_plan@0.5.0`;
+- narrativa configurável de 3 a 10 slides;
+- preservação obrigatória de cor, estampa, proporções e material;
+- safe zones, requisitos, proibições e critérios de aceite por slide;
+- cobertura de claims e controle de direitos dos assets;
+- cinco testes automatizados.
+
+### Alterado
+
+- versão elevada para `0.5.0`;
+- README e roadmap sincronizados.
 
 ## [0.4.0] - 2026-07-21
 
@@ -81,7 +98,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.4.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.1.0...v0.2.0

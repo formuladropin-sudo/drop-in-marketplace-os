@@ -2,28 +2,26 @@
 
 ## Versão atual
 
-`0.4.0`
+`0.5.0`
 
 | Campo | Valor |
 |---|---|
-| Estágio | Copy Engine |
+| Estágio | Carousel Engine |
 | Estabilidade | Desenvolvimento inicial |
-| Entrada canônica | `marketplace_ad@0.2.0` |
-| Estratégia | `decision_strategy@0.3.0` |
-| Copy | `copy_request@0.4.0`, `copy_package@0.4.0` |
+| Contratos visuais | `carousel_request@0.5.0`, `carousel_plan@0.5.0` |
 | Data | 2026-07-21 |
-| Referência | Commit 0004 — Copy Engine |
+| Referência | Commit 0005 — Carousel Engine |
 
 ## Compatibilidade
 
-A Copy Engine `0.4.0` consome contratos canônico e estratégico existentes sem modificá-los. Elementos persuasivos mantêm referências às claims suportadas. Mudança de template que altere significado, ordem ou política de conformidade exige regressão e avaliação SemVer.
+A Carousel Engine consome o pacote canônico, a estratégia `0.3.0` e a copy `0.4.0` sem modificá-los. O plano visual permanece uma especificação: renderizadores futuros devem respeitar requisitos, proibições e critérios de aceite.
 
 ## Regras operacionais
 
-1. Copy nunca promove hipótese a fato.
-2. Mensagens persuasivas registram claims de origem.
-3. Limites e truncagens permanecem observáveis.
-4. Releases atualizam versão, changelog, documentação e testes.
+1. Produto real não pode ser descaracterizado.
+2. Mensagens visuais apontam para claims suportadas.
+3. Assets sem direito conhecido não são usados automaticamente.
+4. Cobertura e warnings permanecem observáveis.
 5. Mudanças incompatíveis exigem migração.
 
 Consulte [`docs/project/VERSIONING.md`](docs/project/VERSIONING.md).

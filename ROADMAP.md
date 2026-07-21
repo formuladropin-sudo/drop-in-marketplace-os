@@ -73,7 +73,7 @@ Entregas:
 
 Resultado entregue em `0.4.0`: contratos de copy, baseline determinística, limites configuráveis, rastreabilidade por claim, compliance e cinco testes automatizados.
 
-## Fase 4 — Carousel Engine (`0.5.x`)
+## Fase 4 — Carousel Engine (`0.5.x`) — Concluída
 
 **Objetivo:** transformar a estratégia em especificações visuais auditáveis.
 
@@ -84,6 +84,8 @@ Entregas:
 - safe zones, proporções e legibilidade mobile;
 - contratos de asset e critérios de aceite;
 - suporte a referências e variações.
+
+Resultado entregue em `0.5.0`: contratos visuais, narrativa de 3 a 10 slides, preservação obrigatória, safe zones, cobertura de claims, controle de assets e cinco testes.
 
 ## Fase 5 — Analyzer Engine (`0.6.x`)
 

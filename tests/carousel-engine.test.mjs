@@ -1,0 +1,17 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import Ajv2020 from "ajv/dist/2020.js";
+import { decide } from "../src/engines/decision/index.mjs";
+import { generateCopy } from "../src/engines/copy/index.mjs";
+import { planCarousel } from "../src/engines/carousel/index.mjs";
+const json = async (p) => JSON.parse(await readFile(new URL(p, import.meta.url), "utf8"));
+const ad=await json("./fixtures/contracts/valid/shopee-shirt.json"), dr=await json("./fixtures/decision/request-conversion.json"), cr=await json("./fixtures/copy/request-shopee.json"), vr=await json("./fixtures/carousel/request-marketplace.json");
+const rs=await json("../schemas/v0.5.0/carousel-request.schema.json"), os=await json("../schemas/v0.5.0/carousel-plan.schema.json");
+const ajv=new Ajv2020({strict:true,allErrors:true});
+const build=()=>{const s=decide(ad,dr);return planCarousel(ad,s,generateCopy(ad,s,cr),vr)};
+test("carousel contracts validate",()=>{assert.equal(ajv.compile(rs)(vr),true);const v=ajv.compile(os),o=build();assert.equal(v(o),true,JSON.stringify(v.errors));});
+test("plan is deterministic and has exact slide count",()=>{assert.deepEqual(build(),build());assert.equal(build().slides.length,vr.slide_count);});
+test("cover is first and CTA is last",()=>{const s=build().slides;assert.equal(s[0].role,"cover");assert.equal(s.at(-1).role,"cta");});
+test("every slide contains preservation prohibitions",()=>{assert.ok(build().slides.every(s=>s.prohibitions.some(p=>p.includes("color"))));});
+test("unknown asset rights cannot be the only source",()=>{const x=structuredClone(ad);x.assets[0].usage_rights="unknown";const s=decide(x,dr),c=generateCopy(x,s,cr);assert.throws(()=>planCarousel(x,s,c,vr),/CAROUSEL_NO_USABLE_ASSETS/);});

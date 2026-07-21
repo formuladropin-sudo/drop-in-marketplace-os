@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.5.0/carousel-request.schema.json",
+  "title": "Carousel Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "request_id", "slide_count", "aspect_ratio", "visual_style", "preservation", "safe_zone_percent"],
+  "properties": {
+    "schema_version": { "const": "0.5.0" },
+    "contract_type": { "const": "carousel_request" },
+    "request_id": { "$ref": "#/$defs/id" },
+    "slide_count": { "type": "integer", "minimum": 3, "maximum": 10 },
+    "aspect_ratio": { "enum": ["1:1", "4:5", "9:16"] },
+    "visual_style": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "preservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preserve_color", "preserve_print", "preserve_proportions", "preserve_material"],
+      "properties": {
+        "preserve_color": { "const": true },
+        "preserve_print": { "const": true },
+        "preserve_proportions": { "const": true },
+        "preserve_material": { "const": true }
+      }
+    },
+    "safe_zone_percent": { "type": "integer", "minimum": 3, "maximum": 20 },
+    "include_measurements": { "type": "boolean", "default": false }
+  },
+  "$defs": { "id": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$" } }
+}

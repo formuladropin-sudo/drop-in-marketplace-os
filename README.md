@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Copy Engine · **Versão:** `0.4.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Carousel Engine · **Versão:** `0.5.0` · **Estabilidade:** desenvolvimento inicial
 
 ## Visão
 
@@ -55,6 +55,7 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Taxonomia de erros](docs/contracts/ERROR_TAXONOMY.md) | Estados, severidades e códigos estáveis. |
 | [Decision Engine](docs/engines/decision/README.md) | Algoritmo, contratos, scoring e limites da primeira engine. |
 | [Copy Engine](docs/engines/copy/README.md) | Geração rastreável de título, bullets, descrição e CTA. |
+| [Carousel Engine](docs/engines/carousel/README.md) | Especificações visuais, preservação e cobertura narrativa. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -99,7 +100,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.4.0` entrega a **Copy Engine** determinística, com rastreabilidade de claims e controle de limites. O próximo marco é a **Carousel Engine**, responsável por transformar a mesma estratégia em especificações visuais auditáveis.
+A versão `0.5.0` entrega a **Carousel Engine**, com sequência adaptável, preservação obrigatória, safe zones e cobertura de claims. O próximo marco é a **Analyzer Engine**, que consolidará auditoria e scoring do pacote completo.
 
 ## Licença
 

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.5.0/carousel-plan.schema.json",
+  "title": "Carousel Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "plan_id", "source", "aspect_ratio", "safe_zone_percent", "slides", "coverage", "compliance"],
+  "properties": {
+    "schema_version": { "const": "0.5.0" },
+    "contract_type": { "const": "carousel_plan" },
+    "plan_id": { "type": "string" },
+    "source": { "type": "object" },
+    "aspect_ratio": { "enum": ["1:1", "4:5", "9:16"] },
+    "safe_zone_percent": { "type": "integer", "minimum": 3, "maximum": 20 },
+    "slides": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["position", "role", "objective", "headline", "source_claim_ids", "asset_ids", "composition", "requirements", "prohibitions", "acceptance_criteria"],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1 },
+          "role": { "enum": ["cover", "views", "benefit", "detail", "lifestyle", "material", "measurements", "trust", "cta"] },
+          "objective": { "type": "string" },
+          "headline": { "type": "string" },
+          "source_claim_ids": { "type": "array", "items": { "type": "string" } },
+          "asset_ids": { "type": "array", "items": { "type": "string" } },
+          "composition": { "type": "string" },
+          "requirements": { "type": "array", "items": { "type": "string" } },
+          "prohibitions": { "type": "array", "items": { "type": "string" } },
+          "acceptance_criteria": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["supported_claim_ids", "uncovered_claim_ids"],
+      "properties": {
+        "supported_claim_ids": { "type": "array", "items": { "type": "string" } },
+        "uncovered_claim_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "required": ["status", "warnings"],
+      "properties": {
+        "status": { "enum": ["ready", "needs_review", "blocked"] },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
