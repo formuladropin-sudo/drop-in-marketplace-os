@@ -87,7 +87,7 @@ Entregas:
 
 Resultado entregue em `0.5.0`: contratos visuais, narrativa de 3 a 10 slides, preservação obrigatória, safe zones, cobertura de claims, controle de assets e cinco testes.
 
-## Fase 5 — Analyzer Engine (`0.6.x`)
+## Fase 5 — Analyzer Engine (`0.6.x`) — Concluída
 
 **Objetivo:** medir qualidade, conformidade e prontidão para publicação.
 
@@ -98,6 +98,8 @@ Entregas:
 - bloqueios de segurança e políticas;
 - recomendações priorizadas por impacto e esforço;
 - regressão automatizada contra casos de referência.
+
+Resultado entregue em `0.6.0`: rubric de 100 pontos, sete dimensões, blockers, achados explicáveis, próximas ações e cinco testes automatizados.
 
 ## Fase 6 — Marketplace Adapters (`0.7.x`)
 

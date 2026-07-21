@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Carousel Engine · **Versão:** `0.5.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Analyzer Engine · **Versão:** `0.6.0` · **Estabilidade:** desenvolvimento inicial
 
 ## Visão
 
@@ -56,6 +56,7 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Decision Engine](docs/engines/decision/README.md) | Algoritmo, contratos, scoring e limites da primeira engine. |
 | [Copy Engine](docs/engines/copy/README.md) | Geração rastreável de título, bullets, descrição e CTA. |
 | [Carousel Engine](docs/engines/carousel/README.md) | Especificações visuais, preservação e cobertura narrativa. |
+| [Analyzer Engine](docs/engines/analyzer/README.md) | Rubric, scores explicáveis, achados e próximas ações. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -100,7 +101,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.5.0` entrega a **Carousel Engine**, com sequência adaptável, preservação obrigatória, safe zones e cobertura de claims. O próximo marco é a **Analyzer Engine**, que consolidará auditoria e scoring do pacote completo.
+A versão `0.6.0` entrega a **Analyzer Engine** e fecha o primeiro pipeline de domínio. O próximo marco são os **Marketplace Adapters**, começando por Shopee Brasil.
 
 ## Licença
 

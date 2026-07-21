@@ -8,10 +8,26 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- rubric e contrato da Analyzer Engine;
-- scores explicáveis por dimensão;
-- blockers, warnings e recomendações;
-- testes de consistência do pacote completo.
+- adapter Shopee Brasil;
+- limites e mapeamento do canal;
+- exportação validada do pacote;
+- testes específicos de política e campos.
+
+## [0.6.0] - 2026-07-21
+
+### Adicionado
+
+- Analyzer Engine com rubric `marketplace-quality@0.6.0`;
+- contrato `analysis_report@0.6.0`;
+- sete dimensões totalizando 100 pontos;
+- achados explicáveis, blockers e próximas ações;
+- auditoria cruzada de fontes e claims;
+- cinco testes automatizados.
+
+### Alterado
+
+- versão elevada para `0.6.0`;
+- README e roadmap sincronizados.
 
 ## [0.5.0] - 2026-07-21
 
@@ -98,7 +114,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.5.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.2.0...v0.3.0

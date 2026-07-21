@@ -1,0 +1,9 @@
+import test from "node:test";import assert from "node:assert/strict";import{readFile}from"node:fs/promises";import Ajv2020 from"ajv/dist/2020.js";
+import{decide}from"../src/engines/decision/index.mjs";import{generateCopy}from"../src/engines/copy/index.mjs";import{planCarousel}from"../src/engines/carousel/index.mjs";import{analyzePackage}from"../src/engines/analyzer/index.mjs";
+const j=async p=>JSON.parse(await readFile(new URL(p,import.meta.url),"utf8"));const ad=await j("./fixtures/contracts/valid/shopee-shirt.json"),dr=await j("./fixtures/decision/request-conversion.json"),cr=await j("./fixtures/copy/request-shopee.json"),vr=await j("./fixtures/carousel/request-marketplace.json"),schema=await j("../schemas/v0.6.0/analysis-report.schema.json");
+const build=()=>{const s=decide(ad,dr),c=generateCopy(ad,s,cr),v=planCarousel(ad,s,c,vr);return{report:analyzePackage(ad,s,c,v),s,c,v}};
+test("report validates and scores seven dimensions",()=>{const r=build().report,v=new Ajv2020({strict:true}).compile(schema);assert.equal(v(r),true,JSON.stringify(v.errors));assert.equal(r.dimensions.length,7);assert.ok(r.score>=0&&r.score<=100);});
+test("analysis is deterministic",()=>assert.deepEqual(build().report,build().report));
+test("dimension scores sum to total",()=>{const r=build().report;assert.equal(r.score,r.dimensions.reduce((a,d)=>a+d.score,0));});
+test("untraceable copy blocks package",()=>{const{x,s,c,v}= {...build(),x:null};c.bullets[0].source_claim_ids=["missing"];const r=analyzePackage(ad,s,c,v);assert.equal(r.status,"blocked");assert.ok(r.findings.some(f=>f.code==="PACKAGE_INCONSISTENT"));});
+test("every non-passed finding has a next action",()=>{const r=build().report;assert.equal(r.next_actions.length,r.findings.filter(f=>f.severity!=="passed").length);});

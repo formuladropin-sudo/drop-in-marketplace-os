@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.6.0/analysis-report.schema.json",
+  "title": "Analysis Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "report_id", "rubric_version", "source", "status", "score", "dimensions", "findings", "next_actions"],
+  "properties": {
+    "schema_version": { "const": "0.6.0" },
+    "contract_type": { "const": "analysis_report" },
+    "report_id": { "type": "string" },
+    "rubric_version": { "const": "marketplace-quality@0.6.0" },
+    "source": { "type": "object" },
+    "status": { "enum": ["approved", "needs_review", "blocked"] },
+    "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "dimensions": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "score", "max_score", "explanation"],
+        "properties": {
+          "id": { "type": "string" }, "score": { "type": "integer", "minimum": 0 },
+          "max_score": { "type": "integer", "minimum": 1 }, "explanation": { "type": "string" }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["code", "severity", "module", "message", "recommendation"],
+        "properties": {
+          "code": { "type": "string" }, "severity": { "enum": ["blocker", "critical", "warning", "opportunity", "passed"] },
+          "module": { "type": "string" }, "message": { "type": "string" }, "recommendation": { "type": "string" }, "reference": { "type": "string" }
+        }
+      }
+    },
+    "next_actions": { "type": "array", "items": { "type": "string" } }
+  }
+}
