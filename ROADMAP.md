@@ -109,11 +109,13 @@ Ordem inicial proposta: Shopee Brasil, Mercado Livre Brasil e TikTok Shop Brasil
 
 Resultado entregue em `0.7.0`: adapter Shopee Brasil, perfil de política externo/versionado, mapeamento de variantes e cinco testes. Outros canais permanecem extensões futuras após validação do canal inicial.
 
-## Fase 7 — Orchestration & Interfaces (`0.8.x`)
+## Fase 7 — Orchestration & Interfaces (`0.8.x`) — Concluída
 
 **Objetivo:** oferecer execução completa, observável e reprocessável.
 
 Entregas: orquestrador, API/CLI, persistência de execuções, interface operacional, controle de acesso, logs e recuperação de falhas.
+
+Resultado entregue em `0.8.0`: orquestrador de cinco etapas, contrato de execução, CLI, relógio injetável, erros por etapa e cinco testes. Persistência e API permanecem interfaces futuras, sem bloquear a baseline local.
 
 ## Fase 8 — Production Readiness (`0.9.x`)
 

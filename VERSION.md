@@ -2,22 +2,23 @@
 
 ## Versão atual
 
-`0.7.0`
+`0.8.0`
 
 | Campo | Valor |
 |---|---|
-| Estágio | Marketplace Adapters |
+| Estágio | Orchestration & Interfaces |
 | Estabilidade | Desenvolvimento inicial |
-| Canal inicial | Shopee Brasil |
+| Execução | `pipeline_run@0.8.0` |
+| Interface | CLI local |
 | Data | 2026-07-21 |
-| Referência | Commit 0007 — Marketplace Adapters |
+| Referência | Commit 0008 — Orchestration & Interfaces |
 
 ## Compatibilidade
 
-O adapter consome o pipeline `0.2.0–0.6.0` e exige perfil externo versionado. Atualizar regras do canal não modifica engines nem fatos do produto.
+O orquestrador apenas coordena contratos publicados entre `0.2.0` e `0.7.0`. Falhas mantêm etapas e artefatos concluídos; a CLI não produz efeitos externos.
 
-## Regra de produção
+## Próximo marco
 
-O perfil de exemplo não constitui confirmação das políticas atuais da Shopee. Produção exige perfil verificado, datado e aprovado pelo responsável operacional.
+Production Readiness `0.9.0`, com CI, segurança, operação e validação do candidato estável.
 
 Consulte [`docs/project/VERSIONING.md`](docs/project/VERSIONING.md).

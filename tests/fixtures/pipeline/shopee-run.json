@@ -1,0 +1,8 @@
+{
+  "ad_file": "../contracts/valid/shopee-shirt.json",
+  "decision_request_file": "../decision/request-conversion.json",
+  "copy_request_file": "../copy/request-shopee.json",
+  "carousel_request_file": "../carousel/request-marketplace.json",
+  "marketplace_profile_file": "../../../config/marketplaces/shopee-br.example.json",
+  "notice": "Manifest resolved by the pipeline test; CLI expects the expanded object."
+}

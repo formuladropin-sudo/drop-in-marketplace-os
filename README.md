@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Marketplace Adapters · **Versão:** `0.7.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Orchestration & Interfaces · **Versão:** `0.8.0` · **Estabilidade:** desenvolvimento inicial
 
 ## Visão
 
@@ -58,6 +58,7 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Carousel Engine](docs/engines/carousel/README.md) | Especificações visuais, preservação e cobertura narrativa. |
 | [Analyzer Engine](docs/engines/analyzer/README.md) | Rubric, scores explicáveis, achados e próximas ações. |
 | [Shopee Brasil Adapter](docs/adapters/shopee-br/README.md) | Mapeamento de listing com política externa versionada. |
+| [Orquestração e CLI](docs/application/ORCHESTRATION.md) | Execução end-to-end, estados e falhas por etapa. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -102,7 +103,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.7.0` entrega o primeiro adapter, para Shopee Brasil, sem congelar regras externas no domínio. O próximo marco é a orquestração completa e uma interface CLI.
+A versão `0.8.0` entrega execução end-to-end e CLI sem efeitos externos. O próximo marco é Production Readiness: CI, segurança, operação, observabilidade e validação do candidato estável.
 
 ## Licença
 

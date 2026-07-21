@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.8.0/pipeline-run.schema.json",
+  "title": "Pipeline Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "run_id", "project_id", "status", "stages", "artifacts"],
+  "properties": {
+    "schema_version": { "const": "0.8.0" },
+    "contract_type": { "const": "pipeline_run" },
+    "run_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "status": { "enum": ["completed", "needs_review", "failed"] },
+    "stages": {
+      "type": "array", "minItems": 1, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "status", "started_at", "completed_at"],
+        "properties": {
+          "name": { "enum": ["decision", "copy", "carousel", "analysis", "adapter"] },
+          "status": { "enum": ["completed", "failed"] },
+          "started_at": { "type": "string", "format": "date-time" },
+          "completed_at": { "type": "string", "format": "date-time" },
+          "error_code": { "type": "string" }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["strategy", "copy", "carousel", "analysis", "export"],
+      "properties": {
+        "strategy": { "type": "object" }, "copy": { "type": "object" }, "carousel": { "type": "object" },
+        "analysis": { "type": "object" }, "export": { "type": "object" }
+      }
+    }
+  }
+}
