@@ -2,6 +2,8 @@
 
 Traduz o pacote canônico aprovado para uma estrutura de listing da Shopee Brasil. O adapter não decide estratégia nem corrige conteúdo: mapeia campos, aplica limites do perfil e registra truncagens.
 
+Implementa a interface genérica registrada em `src/adapters/adapter-interface.mjs` e produz `marketplace_export@0.7.0`. O orquestrador resolve o adapter por canal e país; não importa este módulo diretamente.
+
 ## Política versionada
 
 Regras de marketplace mudam fora deste repositório. Por isso o adapter exige um perfil com `version`, canal, país e limites. O arquivo `shopee-br.example.json` serve apenas aos testes e declara explicitamente que seus números precisam de verificação antes da produção.

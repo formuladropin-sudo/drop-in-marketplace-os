@@ -2,12 +2,13 @@ import { decide } from "../engines/decision/index.mjs";
 import { generateCopy } from "../engines/copy/index.mjs";
 import { planCarousel } from "../engines/carousel/index.mjs";
 import { analyzePackage } from "../engines/analyzer/index.mjs";
-import { adaptShopeeBr } from "../adapters/shopee-br/index.mjs";
+import { defaultAdapterRegistry } from "../adapters/index.mjs";
 
 const now = (clock) => clock().toISOString();
 
 export function runMarketplacePipeline(input, options = {}) {
   const clock = options.clock ?? (() => new Date());
+  const adapterRegistry = options.adapterRegistry ?? defaultAdapterRegistry;
   const stages = [];
   const artifacts = {};
   const execute = (name, fn) => {
@@ -26,7 +27,10 @@ export function runMarketplacePipeline(input, options = {}) {
   artifacts.copy = execute("copy", () => generateCopy(input.ad, artifacts.strategy, input.copy_request));
   artifacts.carousel = execute("carousel", () => planCarousel(input.ad, artifacts.strategy, artifacts.copy, input.carousel_request));
   artifacts.analysis = execute("analysis", () => analyzePackage(input.ad, artifacts.strategy, artifacts.copy, artifacts.carousel));
-  artifacts.export = execute("adapter", () => adaptShopeeBr(input.ad, artifacts.copy, artifacts.carousel, artifacts.analysis, input.marketplace_profile));
+  artifacts.export = execute("adapter", () => {
+    const adapter = adapterRegistry.resolve(input.ad.marketplace.channel, input.ad.marketplace.country);
+    return adapter.adapt(input.ad, artifacts.copy, artifacts.carousel, artifacts.analysis, input.marketplace_profile);
+  });
 
   return {
     schema_version: "0.8.0",

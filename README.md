@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Production Readiness · **Versão:** `0.9.0` · **Estabilidade:** release candidate bloqueado por validações externas
+> **Status:** Architecture Audit · **Versão:** `0.9.1` · **Estabilidade:** arquitetura aprovada; release estável condicionada a validações externas
 
 ## Visão
 
@@ -61,6 +61,8 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Orquestração e CLI](docs/application/ORCHESTRATION.md) | Execução end-to-end, estados e falhas por etapa. |
 | [Runbook](docs/operations/RUNBOOK.md) | Execução, incidentes, rollback e retenção. |
 | [Release checklist](docs/operations/RELEASE_CHECKLIST.md) | Critérios internos e externos para release. |
+| [Quality Gate](docs/quality/QUALITY_GATE.md) | Gates binários de commit, arquitetura e release. |
+| [Architecture Audit 0.9.1](docs/quality/ARCHITECTURE_AUDIT_0.9.1.md) | Achados, correções e parecer arquitetural. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -105,7 +107,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.9.0` conclui a preparação técnica: CI, segurança, runbook, observabilidade e checklist. A versão `1.0.0` permanece corretamente bloqueada até a verificação das regras oficiais da Shopee e um piloto operacional real.
+A versão `0.9.1` aprova a arquitetura após remover o acoplamento direto à Shopee, formalizar a interface de plugins/adapters, completar os contratos e instituir governança de qualidade. A `1.0.0` permanece condicionada à política oficial e ao piloto operacional.
 
 ## Licença
 

@@ -13,6 +13,27 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - resolver achados do piloto;
 - estabilizar contratos e publicar `1.0.0`.
 
+## [0.9.1] - 2026-07-21
+
+### Adicionado
+
+- interface e registry genéricos para plugins de marketplace;
+- schema público `marketplace_export@0.7.0`;
+- registro central de todos os contratos;
+- testes arquiteturais de dependência, registro e extensibilidade;
+- diretório `docs/quality` com quality gate, estratégia de testes, decisões, matriz e auditoria.
+
+### Alterado
+
+- orquestrador desacoplado do adapter Shopee;
+- convenções de nomenclatura formalizadas;
+- versão elevada para `0.9.1`.
+
+### Corrigido
+
+- ausência de contrato documentado para a exportação;
+- dependência concreta de marketplace na camada de aplicação.
+
 ## [0.9.0] - 2026-07-21
 
 ### Adicionado
@@ -160,7 +181,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.1...HEAD
+[0.9.1]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.6.0...v0.7.0

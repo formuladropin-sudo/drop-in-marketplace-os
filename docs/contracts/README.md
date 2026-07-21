@@ -39,4 +39,5 @@ O comando valida o próprio schema, todos os casos em `tests/fixtures/contracts/
 
 - [Modelo canônico](CANONICAL_MODEL.md)
 - [Taxonomia de erros](ERROR_TAXONOMY.md)
+- [Registro de contratos](CONTRACT_REGISTRY.md)
 - [ADR 0001](../adr/0001-json-schema-canonical-contracts.md)

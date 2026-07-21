@@ -109,3 +109,7 @@ Credenciais são fornecidas por mecanismo externo seguro. Dados pessoais são mi
 ## Evolução
 
 Decisões estruturais devem ser registradas em ADR. Interfaces públicas só mudam conforme `VERSIONING.md`. Uma abstração nova deve demonstrar pelo menos um caso real e não pode antecipar complexidade sem necessidade.
+
+## Extensão de marketplaces
+
+Adapters implementam `defineMarketplaceAdapter` e entram por `createAdapterRegistry`. A aplicação resolve `channel:country`; o Core e as engines não conhecem nomes de marketplaces. Um novo canal adiciona módulo, perfil, documentação e testes, sem editar regras do núcleo.
