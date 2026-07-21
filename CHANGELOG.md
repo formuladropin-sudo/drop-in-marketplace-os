@@ -8,10 +8,25 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- CI e matriz de versões;
-- políticas de segurança e operação;
-- observabilidade e runbooks;
-- validação end-to-end do candidato estável.
+- verificar e aprovar perfil oficial da Shopee Brasil;
+- executar piloto controlado com produto real;
+- resolver achados do piloto;
+- estabilizar contratos e publicar `1.0.0`.
+
+## [0.9.0] - 2026-07-21
+
+### Adicionado
+
+- CI em Node 20, 22 e 24;
+- auditoria de dependências e verificação de release;
+- política de segurança;
+- runbook operacional, observabilidade e checklist de release;
+- critérios explícitos que bloqueiam `1.0.0` sem evidência externa.
+
+### Alterado
+
+- versão elevada para `0.9.0`;
+- README e roadmap atualizados para Production Readiness.
 
 ## [0.8.0] - 2026-07-21
 
@@ -145,7 +160,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.8.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.5.0...v0.6.0

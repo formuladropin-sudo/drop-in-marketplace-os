@@ -2,23 +2,24 @@
 
 ## Versão atual
 
-`0.8.0`
+`0.9.0`
 
 | Campo | Valor |
 |---|---|
-| Estágio | Orchestration & Interfaces |
-| Estabilidade | Desenvolvimento inicial |
-| Execução | `pipeline_run@0.8.0` |
-| Interface | CLI local |
+| Estágio | Production Readiness |
+| Estabilidade | Candidato pré-1.0 |
+| Testes locais | 30 |
+| CI | Node 20, 22 e 24 |
 | Data | 2026-07-21 |
-| Referência | Commit 0008 — Orchestration & Interfaces |
+| Referência | Commit 0009 — Production Readiness |
 
-## Compatibilidade
+## Estado da versão 1.0
 
-O orquestrador apenas coordena contratos publicados entre `0.2.0` e `0.7.0`. Falhas mantêm etapas e artefatos concluídos; a CLI não produz efeitos externos.
+Tecnicamente preparada, porém bloqueada por dois critérios que exigem evidência externa:
 
-## Próximo marco
+1. perfil oficial vigente da Shopee Brasil verificado e aprovado;
+2. piloto controlado com produto real concluído sem blocker crítico.
 
-Production Readiness `0.9.0`, com CI, segurança, operação e validação do candidato estável.
+Esses itens não serão marcados como concluídos por inferência. Após sua comprovação, os contratos públicos poderão ser declarados estáveis e a release `1.0.0` preparada.
 
-Consulte [`docs/project/VERSIONING.md`](docs/project/VERSIONING.md).
+Consulte [`docs/operations/RELEASE_CHECKLIST.md`](docs/operations/RELEASE_CHECKLIST.md).

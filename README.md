@@ -2,7 +2,7 @@
 
 Framework profissional para geração, análise e evolução de anúncios de marketplaces por meio de arquitetura modular, contratos versionados e automação responsável.
 
-> **Status:** Orchestration & Interfaces · **Versão:** `0.8.0` · **Estabilidade:** desenvolvimento inicial
+> **Status:** Production Readiness · **Versão:** `0.9.0` · **Estabilidade:** release candidate bloqueado por validações externas
 
 ## Visão
 
@@ -59,6 +59,8 @@ As engines ainda não são implementadas no Commit 0001. Esta versão estabelece
 | [Analyzer Engine](docs/engines/analyzer/README.md) | Rubric, scores explicáveis, achados e próximas ações. |
 | [Shopee Brasil Adapter](docs/adapters/shopee-br/README.md) | Mapeamento de listing com política externa versionada. |
 | [Orquestração e CLI](docs/application/ORCHESTRATION.md) | Execução end-to-end, estados e falhas por etapa. |
+| [Runbook](docs/operations/RUNBOOK.md) | Execução, incidentes, rollback e retenção. |
+| [Release checklist](docs/operations/RELEASE_CHECKLIST.md) | Critérios internos e externos para release. |
 | [Roadmap](ROADMAP.md) | Fases, entregas e critérios de saída. |
 | [Versão](VERSION.md) | Estado canônico da versão atual. |
 | [Changelog](CHANGELOG.md) | Histórico das mudanças relevantes. |
@@ -103,7 +105,7 @@ O teste compila o JSON Schema Draft 2020-12, valida fixtures positivas e confirm
 
 ## Estado atual e próximo marco
 
-A versão `0.8.0` entrega execução end-to-end e CLI sem efeitos externos. O próximo marco é Production Readiness: CI, segurança, operação, observabilidade e validação do candidato estável.
+A versão `0.9.0` conclui a preparação técnica: CI, segurança, runbook, observabilidade e checklist. A versão `1.0.0` permanece corretamente bloqueada até a verificação das regras oficiais da Shopee e um piloto operacional real.
 
 ## Licença
 

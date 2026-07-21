@@ -117,11 +117,13 @@ Entregas: orquestrador, API/CLI, persistência de execuções, interface operaci
 
 Resultado entregue em `0.8.0`: orquestrador de cinco etapas, contrato de execução, CLI, relógio injetável, erros por etapa e cinco testes. Persistência e API permanecem interfaces futuras, sem bloquear a baseline local.
 
-## Fase 8 — Production Readiness (`0.9.x`)
+## Fase 8 — Production Readiness (`0.9.x`) — Concluída tecnicamente
 
 **Objetivo:** provar confiabilidade antes da versão estável.
 
 Entregas: testes end-to-end, segurança, desempenho, observabilidade, backup, migrações, documentação operacional e piloto controlado.
+
+Resultado entregue em `0.9.0`: CI multi-Node, auditoria, política de segurança, runbook, observabilidade e checklist automatizado. Permanecem externos ao código: perfil oficial vigente e piloto controlado.
 
 ## Versão 1.0
 
