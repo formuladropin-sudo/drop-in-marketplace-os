@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.4.0",
+  "contract_type": "copy_request",
+  "request_id": "copy-shirt-001",
+  "locale": "pt-BR",
+  "tone": "commercial",
+  "keywords": ["católica", "Dry Fit", "unissex", "religiosa"],
+  "limits": {
+    "title_max_chars": 120,
+    "bullet_max_chars": 180,
+    "description_max_chars": 2000,
+    "max_bullets": 5
+  },
+  "cta": "Escolha seu tamanho e garanta a sua."
+}

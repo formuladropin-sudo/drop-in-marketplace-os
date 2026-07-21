@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.4.0/copy-request.schema.json",
+  "title": "Copy Engine Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "request_id", "locale", "tone", "keywords", "limits", "cta"],
+  "properties": {
+    "schema_version": { "const": "0.4.0" },
+    "contract_type": { "const": "copy_request" },
+    "request_id": { "$ref": "#/$defs/id" },
+    "locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
+    "tone": { "enum": ["clear", "commercial", "premium", "informative"] },
+    "keywords": { "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 128 }, "uniqueItems": true, "maxItems": 20 },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title_max_chars", "bullet_max_chars", "description_max_chars", "max_bullets"],
+      "properties": {
+        "title_max_chars": { "type": "integer", "minimum": 20, "maximum": 300 },
+        "bullet_max_chars": { "type": "integer", "minimum": 20, "maximum": 500 },
+        "description_max_chars": { "type": "integer", "minimum": 200, "maximum": 10000 },
+        "max_bullets": { "type": "integer", "minimum": 1, "maximum": 10 }
+      }
+    },
+    "cta": { "type": "string", "minLength": 1, "maxLength": 160 }
+  },
+  "$defs": { "id": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$" } }
+}

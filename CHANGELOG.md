@@ -8,10 +8,27 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 
 ### Planejado
 
-- contratos de entrada e saída da Copy Engine;
-- geração controlada de título, descrição, bullets e CTAs;
-- políticas de alegações e termos proibidos;
-- testes de fidelidade entre estratégia e copy.
+- contratos e narrativa da Carousel Engine;
+- especificações de assets e safe zones;
+- regras de preservação do produto;
+- testes de cobertura visual e rastreabilidade.
+
+## [0.4.0] - 2026-07-21
+
+### Adicionado
+
+- Copy Engine determinística para título, bullets, descrição e CTA;
+- contratos `copy_request@0.4.0` e `copy_package@0.4.0`;
+- rastreabilidade de elementos persuasivos por `source_claim_ids`;
+- limites configuráveis de caracteres e quantidade;
+- registro de truncagens e violações de suporte;
+- bloqueio de estratégia inválida e locale incompatível;
+- documentação completa e cinco testes automatizados.
+
+### Alterado
+
+- versão elevada para `0.4.0`;
+- README e roadmap atualizados para a Copy Engine.
 
 ## [0.3.0] - 2026-07-21
 
@@ -64,7 +81,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o 
 - roadmap por fases com critérios de saída;
 - registro canônico da versão `0.1.0`.
 
-[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...HEAD
+[Não publicado]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/formuladropin-sudo/drop-in-marketplace-os/releases/tag/v0.1.0

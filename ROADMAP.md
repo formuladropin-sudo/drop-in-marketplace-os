@@ -59,7 +59,7 @@ Entregas:
 
 Resultado entregue em `0.3.0`: contratos de pedido e estratégia, ranking determinístico por evidência/prioridade, tratamento de objeções, riscos explícitos, decision trace e cinco testes automatizados.
 
-## Fase 3 — Copy Engine (`0.4.x`)
+## Fase 3 — Copy Engine (`0.4.x`) — Concluída
 
 **Objetivo:** gerar conteúdo pesquisável e persuasivo sem inventar fatos.
 
@@ -70,6 +70,8 @@ Entregas:
 - limites configuráveis por marketplace;
 - avaliação de SEO, clareza e fidelidade;
 - versionamento de templates e prompts.
+
+Resultado entregue em `0.4.0`: contratos de copy, baseline determinística, limites configuráveis, rastreabilidade por claim, compliance e cinco testes automatizados.
 
 ## Fase 4 — Carousel Engine (`0.5.x`)
 

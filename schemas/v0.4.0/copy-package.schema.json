@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drop-in-marketplace-os.dev/schemas/v0.4.0/copy-package.schema.json",
+  "title": "Copy Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "contract_type", "copy_id", "source", "title", "bullets", "description", "cta", "keywords_used", "compliance"],
+  "properties": {
+    "schema_version": { "const": "0.4.0" },
+    "contract_type": { "const": "copy_package" },
+    "copy_id": { "$ref": "#/$defs/id" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_id", "strategy_id", "request_id"],
+      "properties": {
+        "project_id": { "$ref": "#/$defs/id" },
+        "strategy_id": { "$ref": "#/$defs/id" },
+        "request_id": { "$ref": "#/$defs/id" }
+      }
+    },
+    "title": { "$ref": "#/$defs/copyElement" },
+    "bullets": { "type": "array", "items": { "$ref": "#/$defs/copyElement" } },
+    "description": { "$ref": "#/$defs/copyElement" },
+    "cta": { "type": "string", "minLength": 1 },
+    "keywords_used": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "compliance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "unsupported_claims", "truncations"],
+      "properties": {
+        "status": { "enum": ["ready", "needs_review", "blocked"] },
+        "unsupported_claims": { "type": "array", "items": { "type": "string" } },
+        "truncations": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,127}$" },
+    "copyElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "source_claim_ids"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "source_claim_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
+      }
+    }
+  }
+}
